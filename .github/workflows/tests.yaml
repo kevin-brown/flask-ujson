@@ -37,7 +37,7 @@ jobs:
         with:
           python-version-file: pyproject.toml
       - name: cache mypy
-        uses: actions/cache@e12d46a63a90f2fae62d114769bbf2a179198b5c
+        uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
         with:
           path: ./.mypy_cache
           key: mypy|${{ hashFiles('pyproject.toml') }}
