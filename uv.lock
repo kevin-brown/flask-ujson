@@ -373,13 +373,19 @@ build = [
     { name = "build" },
 ]
 dev = [
+    { name = "furo", marker = "python_full_version >= '3.9'" },
+    { name = "mypy" },
+    { name = "myst-parser", marker = "python_full_version >= '3.9'" },
     { name = "pip-tools" },
     { name = "pre-commit", version = "3.5.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.9'" },
     { name = "pre-commit", version = "3.6.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.9'" },
+    { name = "pytest" },
     { name = "ruff" },
+    { name = "sphinx", marker = "python_full_version >= '3.9'" },
     { name = "tox", version = "4.25.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.9'" },
     { name = "tox", version = "4.30.3", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version == '3.9.*'" },
     { name = "tox", version = "4.54.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.10'" },
+    { name = "types-ujson" },
 ]
 docs = [
     { name = "furo", marker = "python_full_version >= '3.9'" },
@@ -404,10 +410,16 @@ requires-dist = [
 [package.metadata.requires-dev]
 build = [{ name = "build" }]
 dev = [
+    { name = "furo", marker = "python_full_version >= '3.9'" },
+    { name = "mypy" },
+    { name = "myst-parser", marker = "python_full_version >= '3.9'" },
     { name = "pip-tools" },
     { name = "pre-commit" },
+    { name = "pytest" },
     { name = "ruff" },
+    { name = "sphinx", marker = "python_full_version >= '3.9'" },
     { name = "tox" },
+    { name = "types-ujson" },
 ]
 docs = [
     { name = "furo", marker = "python_full_version >= '3.9'" },

@@ -21,7 +21,7 @@ jobs:
       - run: pip install -r requirements/build.txt
       # Use the commit date instead of the current date during the build.
       - run: echo "SOURCE_DATE_EPOCH=$(git log -1 --pretty=%ct)" >> $GITHUB_ENV
-      - run: python -m build
+      - run: uv build
       # Generate hashes used for provenance.
       - name: generate hash
         id: hash

@@ -23,8 +23,7 @@ jobs:
         id: setup-python
         with:
           python-version: ${{ matrix.python }}
-      - run: pip install tox
-      - run: tox run -e py${{ matrix.python }}
+      - run: uv run --locked tox run -e py${{ matrix.python }}
   typing:
     runs-on: ubuntu-latest
     steps:
@@ -42,5 +41,4 @@ jobs:
         with:
           path: ./.mypy_cache
           key: mypy|${{ hashFiles('pyproject.toml') }}
-      - run: pip install tox
-      - run: tox run -e typing
+      - run: uv run --locked tox run -e typing
