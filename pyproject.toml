@@ -18,6 +18,30 @@ dependencies = [
     "ujson",
 ]
 
+[dependency-groups]
+build = [
+    "build",
+]
+dev = [
+    "pip-tools",
+    "pre-commit",
+    "ruff",
+    "tox",
+]
+docs = [
+    "furo ; python_full_version >= '3.9'",
+    "myst-parser ; python_full_version >= '3.9'",
+    "sphinx ; python_full_version >= '3.9'",
+]
+tests = [
+    "pytest",
+]
+typing = [
+    "mypy",
+    "pytest",
+    "types-ujson",
+]
+
 [project.urls]
 Documentation = "https://flask-ujson.readthedocs.io"
 Changes = "https://flask-ujson.readthedocs.io/changes/"
