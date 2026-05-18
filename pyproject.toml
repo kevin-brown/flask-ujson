@@ -27,6 +27,7 @@ dev = [
     "pre-commit",
     "ruff",
     "tox",
+    "tox-uv",
     {include-group = "docs"},
     {include-group = "tests"},
     {include-group = "typing"},
@@ -35,6 +36,13 @@ docs = [
     "furo ; python_full_version >= '3.9'",
     "myst-parser ; python_full_version >= '3.9'",
     "sphinx ; python_full_version >= '3.9'",
+]
+gha-update = [
+    "gha-update>=0.2.0 ; python_full_version >= '3.12'",
+]
+pre-commit = [
+    "pre-commit ; python_full_version >= '3.9'",
+    "pre-commit-uv ; python_full_version >= '3.9'",
 ]
 tests = [
     "pytest",
