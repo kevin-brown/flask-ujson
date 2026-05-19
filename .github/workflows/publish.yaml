@@ -18,10 +18,9 @@ jobs:
         id: setup-python
         with:
           python-version-file: pyproject.toml
-      - run: pip install -r requirements/build.txt
       # Use the commit date instead of the current date during the build.
       - run: echo "SOURCE_DATE_EPOCH=$(git log -1 --pretty=%ct)" >> $GITHUB_ENV
-      - run: uv build
+      - run: python -m build
       # Generate hashes used for provenance.
       - name: generate hash
         id: hash
@@ -60,12 +59,12 @@ jobs:
     needs: [provenance]
     # Wait for approval before attempting to upload to PyPI. This allows reviewing the
     # files in the draft release.
-    environment:
-      name: publish
-      url: https://pypi.org/project/flask-ujson/
+    environment: 'publish'
     runs-on: ubuntu-latest
     permissions:
       id-token: write
     steps:
       - uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
       - uses: pypa/gh-action-pypi-publish@cef221092ed1bacb1cc03d23a2d87d1d172e277b # v1.14.0
+        with:
+          packages-dir: dist/
